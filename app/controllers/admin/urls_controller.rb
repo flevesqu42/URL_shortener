@@ -11,5 +11,7 @@ class Admin::UrlsController < ApplicationController
     @url = Url.find(params[:id])
     @url.destroy
     redirect_to admin_urls_path, status: :see_other
+  rescue ActiveRecord::RecordNotFound
+    render_404
   end
 end
