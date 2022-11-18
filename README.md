@@ -1,24 +1,24 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Portal:
+`localhost:3000`
 
-Things you may want to cover:
+Shortened URL:
+`localhost:3000/[:id]`
 
-* Ruby version
+Admin URLs page:
+`localhost:3000/admin`
 
-* System dependencies
+# Technologies involved
 
-* Configuration
+* Ruby on Rails (v.7.0.3)
+* SQLite3
 
-* Database creation
+# Setup
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle install
+rails db:create
+rails db:migrate
+rails server
+```

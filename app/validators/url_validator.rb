@@ -1,16 +1,18 @@
 class UrlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-    unless self.class.string_valid?(value)
+    unless UrlValidator.string_valid?(value)
       record.errors.add attribute, (options[:message] || "not an actual URL: \"#{value}\"")
     end
   end
 
-  # true if given URL as a string is valid
-  def self.string_valid?(str)
-    begin
+  # STATIC
+  class << self
+    # true if given URL as a string is valid
+    def string_valid?(str)
       uri = URI.parse(str)
       uri.kind_of?(URI::HTTP)
-    rescue URI::Error
+    rescue => exception
+      logger.debug("Unable to parse string: #{exception}")
       false
     end
   end

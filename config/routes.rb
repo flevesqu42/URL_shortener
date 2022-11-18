@@ -3,8 +3,15 @@ Rails.application.routes.draw do
   root 'urls#new'
 
   # Resources endpoint for shortened URLs
-  resources 'urls', only: [:index, :show, :new, :create, :update]
+  resources :urls, only: [:show, :new, :create]
 
-  # default behaviour with ID
+  # Administration endpoints
+  namespace :admin do
+    root 'urls#index'
+
+    resources :urls, only: [:index, :destroy]
+  end
+
+  # Default path behaviour with ID
   get '/:id', to: 'urls#show'
 end

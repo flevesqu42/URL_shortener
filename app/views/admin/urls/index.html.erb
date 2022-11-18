@@ -10,11 +10,16 @@ table, th, td {
     <tr>
         <th>URL</th>
         <th>ID</th>
+        <th>Action</th>
     </tr>
     <% @urls.each do |url| %>
     <tr>
         <td><a href= <%= url.full_url %> ><%= url.full_url %></a></td>
         <td><%= url.id %>
+        <td><%= link_to "Destroy", admin_url_path(url), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        } %></td>
     </tr>
     <% end %>
 </ul>
