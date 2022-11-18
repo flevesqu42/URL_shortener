@@ -10,6 +10,6 @@ class UrlValidatorTest < ActionDispatch::IntegrationTest
   end
 
   test "url_valid? failed" do
-    assert !UrlValidator.string_valid?("https//42.fr/")
+    assert_not UrlValidator.string_valid?("https//42.fr/")
   end
 end

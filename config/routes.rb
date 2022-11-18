@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     resources :urls, only: [:index, :destroy]
   end
 
-  # Default path behaviour with ID
-  get '/:id', to: 'urls#show'
+  # Default path will be redirection with ID
+  get '/:id', to: 'urls#redirect', as: 'redirect'
 end

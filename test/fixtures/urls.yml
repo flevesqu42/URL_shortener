@@ -1,7 +1,4 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  full_url: "https://42.fr"
-
-two:
+url_example:
   full_url: "https://google.com"

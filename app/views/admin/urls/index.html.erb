@@ -17,8 +17,7 @@ table, th, td {
         <td><a href= <%= url.full_url %> ><%= url.full_url %></a></td>
         <td><%= url.id %>
         <td><%= link_to "Destroy", admin_url_path(url), data: {
-            turbo_method: :delete,
-            turbo_confirm: "Are you sure?"
+            turbo_method: :delete
         } %></td>
     </tr>
     <% end %>
