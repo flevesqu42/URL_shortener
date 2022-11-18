@@ -7,8 +7,9 @@
         <%= form.submit %>
     </div>
 <% end %>
-<% if !@shortened_url.nil? %>
-    <div>
-        <%= @shortened_url %>
-    </div>
+<% @url.errors.full_messages_for(:full_url).each do |message| %>
+    <br><div><%= message %></div>
+<% end %>
+<% if !@new_shortened_url.nil? %>
+    <h3><%= @new_shortened_url %></h3>
 <% end %>
