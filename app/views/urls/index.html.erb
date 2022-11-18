@@ -1,0 +1,20 @@
+<style>
+table, th, td {
+  border: 1px solid;
+}
+</style>
+
+<h2>Saved URLs</h2>
+
+<table>
+    <tr>
+        <th>URL</th>
+        <th>ID</th>
+    </tr>
+    <% @urls.each do |url| %>
+    <tr>
+        <td><a href= <%= url.full_url %> ><%= url.full_url %></a></td>
+        <td><%= url.id %>
+    </tr>
+    <% end %>
+</ul>

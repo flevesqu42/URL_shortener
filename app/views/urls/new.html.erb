@@ -1,0 +1,14 @@
+<h2>New URL</h2>
+
+<%= form_with model: @url do |form| %>
+    <div>
+        <%= form.label :full_url %>
+        <%= form.text_field :full_url %>
+        <%= form.submit %>
+    </div>
+<% end %>
+<% if !@shortened_url.nil? %>
+    <div>
+        <%= @shortened_url %>
+    </div>
+<% end %>
