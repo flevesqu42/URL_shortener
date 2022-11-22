@@ -12,7 +12,7 @@ Admin URLs page:
 # Technologies involved
 
 * Ruby on Rails (v.7.0.3)
-* SQLite3
+* PostgresSQL
 
 # Setup
 
